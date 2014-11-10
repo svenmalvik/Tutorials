@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <title>Simple Angular Filter</title>
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="../../bower_components/angular/angular.js"></script>
+    <script src="controller.js"></script>
+</head>
+<body ng-controller="Controller">
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <!--Sidebar content-->
+
+            Search: <input ng-model="query">
+
+        </div>
+        <div class="col-md-10">
+            <!--Body content-->
+
+            <ul class="phones">
+                <li ng-repeat="payment in payments | filter:query">
+                    <span>{{payment.desc}}</span>
+                    <p>{{payment.amount}}</p>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
